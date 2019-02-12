@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Supletorio</string>
+    <string name="app_name">Supletorio App Moviles</string>
+    <string name="correo">Correo</string>
+    <string name="password">Password</string>
+    <string name="botonRegistrar">Registrarse</string>
+    <string name="botonLogin">Login</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="fechaNacimiento">Fecha de Nacimiento</string>
 </resources>
