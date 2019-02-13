@@ -46,7 +46,7 @@ class RegistrarseActivity : AppCompatActivity() {
 
                 }
                 is Result.Success -> {
-                    
+
 
                 }
 
