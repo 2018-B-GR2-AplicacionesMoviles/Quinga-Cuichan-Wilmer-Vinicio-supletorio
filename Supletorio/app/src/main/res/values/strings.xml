@@ -7,4 +7,16 @@
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="fechaNacimiento">Fecha de Nacimiento</string>
+    <string name="PadreComida">Comida</string>
+    <string name="ListarTablaPadre">Listar Comida</string>
+    <string name="jugar">Jugar</string>
+    <string name="nombrePlato">Nombre Plato</string>
+    <string name="descripcionPlato">Descripcion Plato</string>
+    <string name="nacionalidadPlato">Nacionalidad</string>
+    <string name="numeroPersonasPlato">Numero Personas</string>
+    <string name="picante">Picante</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="guardar">Guardar</string>
+
+
 </resources>

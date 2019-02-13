@@ -15,7 +15,7 @@ module.exports.routes = {
   * Make the view located at `views/homepage.ejs` your home page.            *
   *                                                                          *
   * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
+  * `assets` direc tory)                                                      *
   *                                                                          *
   ***************************************************************************/
 
