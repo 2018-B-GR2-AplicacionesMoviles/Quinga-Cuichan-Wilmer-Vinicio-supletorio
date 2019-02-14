@@ -16,6 +16,8 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
         button2_PrincipallistarComida.setOnClickListener {
             this.irListarComida()
+
+
         }
 
 

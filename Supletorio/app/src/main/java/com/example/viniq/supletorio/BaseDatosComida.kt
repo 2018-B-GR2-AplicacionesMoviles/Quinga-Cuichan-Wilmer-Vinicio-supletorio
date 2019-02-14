@@ -5,24 +5,31 @@ import com.github.kittinunf.fuel.android.extension.responseJson
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.fuel.httpPost
+import com.github.kittinunf.fuel.httpPut
 import com.github.kittinunf.result.Result
 import org.json.JSONArray
 
 class BaseDatosComida() {
     companion object {
 
-        var ip = "http://172.29.64.240:1337/Comida"
+        var ip = "http://192.168.1.9:1337/comida"
         var aux = JSONArray()
         lateinit var resp: JSONArray
 
         fun insertarComida(comida: Comida) {
-            ip.httpPost(listOf("nombrePlato" to comida.nombrePlato, "descripcionPlato" to comida.descripcionPlato, "nacionalidad" to comida.nacionalidad, "numeroPersonas" to comida.numeroPersonas, "picante" to comida.picante)).responseString { request, _, result ->
+            ip.httpPost(listOf(
+                    "nombrePlato" to comida.nombrePlato,
+                    "descripcionPlato" to comida.descripcionPlato,
+                    "nacionalidad" to comida.nacionalidad,
+                    "numeroPersonas" to comida.numeroPersonas,
+                    "picante" to comida.picante)).responseString { request, _, result ->
                 Log.i("http-2", request.toString())
             }
         }
 
         fun getList(): ArrayList<Comida> {
             val comida: ArrayList<Comida> = ArrayList()
+
             ip.httpGet().responseJson { request, response, result ->
                 when (result) {
                     is Result.Failure -> {
@@ -51,6 +58,8 @@ class BaseDatosComida() {
                 val picante = resp.getJSONObject(i).getBoolean("picante")
                 val comidaComida = Comida(idComida, nombrePlato, descripcionPlato, nacionalidad, numeroPersonas, picante)
                 comida.add(comidaComida)
+
+
             }
             Log.i("http-22d", "DatosReturnComida: ${comida}")
             return comida
@@ -58,12 +67,25 @@ class BaseDatosComida() {
         }
 
         fun eliminar(id: Int) {
-            "${ip}/${id}".httpDelete().responseString {
-                request, response, result ->
+            "${ip}/${id}".httpDelete().responseString { request, response, result ->
                 Log.i("http-2", request.toString())
             }
+        }
+
+        fun editarComida(comida: Comida){
+            "${ip}/${comida.idComida}".httpPut(listOf(
+                    "nombrePlato" to comida.nombrePlato,
+                    "descripcionPlato" to comida.descripcionPlato,
+                    "nacionalidad" to comida.nacionalidad,
+                    "numeroPersonas" to comida.numeroPersonas,
+                    "picante" to comida.picante))
+                    .responseString{ request, _, result ->
+                        Log.i("http-2",request.toString())
+                    }
         }
 
 
     }
 }
+
+

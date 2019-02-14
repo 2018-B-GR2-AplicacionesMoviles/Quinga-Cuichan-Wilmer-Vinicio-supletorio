@@ -1,5 +1,6 @@
 package com.example.viniq.supletorio
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
@@ -28,7 +29,9 @@ class ListarComidaActivity : AppCompatActivity() {
         Log.i("bddd", "${comi}")
         lista = findViewById(R.id.reciclerListaComida)
         layoutManager = LinearLayoutManager(this)
+
         adaptador = AdaptadorComida(comi!!, object : ClickListener {
+
             override fun onClick(vista: View, posicion: Int) {
                 val seleccion = findViewById<ConstraintLayout>(R.id.lista_comida)
                 seleccion.setOnClickListener {
@@ -41,6 +44,35 @@ class ListarComidaActivity : AppCompatActivity() {
                                 Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
                                 true
                             }
+                            R.id.menu_editar -> {
+                                val intent = Intent(this@ListarComidaActivity, CrearComidaActivity::class.java)
+                                intent.putExtra("Comida", comi?.get(posicion) as Comida)
+                                intent.putExtra("tipo", "Edit")
+                                startActivity(intent)
+                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
+                                true
+
+                            }
+
+                            R.id.menu_compartir -> {
+                                val contenid = comi?.get(posicion)?.nombrePlato + "\n" + comi?.get(posicion)?.descripcionPlato
+                                val sendIntent: Intent = Intent().apply {
+                                    action = Intent.ACTION_SEND
+                                    putExtra(Intent.EXTRA_TEXT, contenid)
+                                    type = "text/plain"
+                                }
+                                startActivity(sendIntent)
+                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
+                                true
+                            }
+
+                            R.id.menu_lista_aplicaciones->{
+                                val intent = Intent(this@ListarComidaActivity,ListaIngredientesActivity::class.java)
+                                startActivity(intent)
+                                Toast.makeText(this@ListarComidaActivity,"Su seleccion:"+item.title, Toast.LENGTH_SHORT).show()
+                                true
+                            }
+
                             else -> false
                         }
                     })
@@ -56,4 +88,6 @@ class ListarComidaActivity : AppCompatActivity() {
 
 
     }
+
+
 }

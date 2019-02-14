@@ -17,6 +17,13 @@ class AdaptadorComida(private val listaComida: ArrayList<Comida>, var clickListe
         this.items = listaComida
     }
 
+    private var position: Int = 0
+
+
+    fun getPosition(): Int {
+        return position
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdaptadorComida.MyViewHolder {
 
