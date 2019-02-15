@@ -4,7 +4,8 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Ingredientes(
-        var nombreIngrediente:String,
+        var idIngredientes: Int,
+         var nombreIngrediente:String,
         var cantidad: Int,
         var descripcionPreparacion: String,
         var opcional: Boolean,
@@ -13,6 +14,7 @@ class Ingredientes(
         var idComida: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+            parcel.readInt(),
             parcel.readString(),
             parcel.readInt(),
             parcel.readString(),
@@ -23,6 +25,7 @@ class Ingredientes(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(idIngredientes)
         parcel.writeString(nombreIngrediente)
         parcel.writeInt(cantidad)
         parcel.writeString(descripcionPreparacion)
@@ -45,4 +48,5 @@ class Ingredientes(
             return arrayOfNulls(size)
         }
     }
+
 }

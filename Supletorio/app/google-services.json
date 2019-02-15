@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "684852763677",
+    "firebase_url": "https://examen-27e39.firebaseio.com",
+    "project_id": "examen-27e39",
+    "storage_bucket": "examen-27e39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684852763677:android:506336bd2a370ace",
+        "android_client_info": {
+          "package_name": "com.example.viniq.supletorio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684852763677-e37bjrhg43n2fffvogrlj3pv04q9tk47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSzQEoLp2ANob2Ig11euh0fONd7uSrv70"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,16 +2,17 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lista_ingredientesLista"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:clickable="true"
-    android:id="@+id/lista_app"
-    android:foreground="?attr/selectableItemBackground"
+    android:layout_margin="5dp"
     android:background="@color/colorPrimaryDark"
     android:baselineAligned="false"
-    tools:layout_editor_absoluteY="86dp" tools:layout_editor_absoluteX="5dp"
-    android:layout_margin="5dp">
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="5dp"
+    tools:layout_editor_absoluteY="86dp">
 
     <TextView
         android:id="@+id/hijoCantidad"
@@ -55,7 +56,7 @@
     <TextView
         android:id="@+id/hijoNombreIngrediente"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="13dp"

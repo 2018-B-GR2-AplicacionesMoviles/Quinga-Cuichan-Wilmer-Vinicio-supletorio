@@ -71,6 +71,8 @@ class ListarComidaActivity : AppCompatActivity() {
 
                             R.id.menu_lista_aplicaciones -> {
                                 val intent = Intent(this@ListarComidaActivity, ListaIngredientesActivity::class.java)
+                                intent.putExtra("Comida", comi?.get(posicion) as Comida)
+
                                 startActivity(intent)
                                 Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
                                 true
@@ -89,10 +91,6 @@ class ListarComidaActivity : AppCompatActivity() {
         adaptador?.notifyDataSetChanged()
 
     }
-
-
-
-
 
 
 }

@@ -9,15 +9,26 @@ import com.github.kittinunf.fuel.httpPut
 import com.github.kittinunf.result.Result
 import org.json.JSONArray
 
-class BaseDatosComida() {
+class BaseDatosIngredientes() {
+
     companion object {
 
         var ip = "http://192.168.1.9:1337/comida"
         var aux = JSONArray()
         lateinit var resp: JSONArray
 
-        fun insertarComida(comida: Comida) {
-            ip.httpPost(listOf("nombrePlato" to comida.nombrePlato, "descripcionPlato" to comida.descripcionPlato, "nacionalidad" to comida.nacionalidad, "numeroPersonas" to comida.numeroPersonas, "picante" to comida.picante)).responseString { request, _, result ->
+        fun insertarIngrediente(ingredientes: Ingredientes) {
+            ip.httpPost(listOf("" +
+                    "id" to ingredientes.idIngredientes,
+                    "nombreIngrediente" to ingredientes.nombreIngrediente,
+                    "cantidad" to ingredientes.cantidad,
+                    "descripcionPreparacion" to ingredientes.descripcionPreparacion,
+                    "opcional" to ingredientes.opcional,
+                    "tipoIngrediente" to ingredientes.tipoIngrediente,
+                    "necesitaRefrigeracion" to ingredientes.necesitaRefrigeracion,
+                    "idComida" to ingredientes.idComida
+            ))
+                    .responseString { request, _, result ->
                 Log.i("http-2", request.toString())
             }
         }
@@ -68,8 +79,16 @@ class BaseDatosComida() {
             }
         }
 
-        fun editarComida(comida: Comida) {
-            "${ip}/${comida.idComida}".httpPut(listOf("nombrePlato" to comida.nombrePlato, "descripcionPlato" to comida.descripcionPlato, "nacionalidad" to comida.nacionalidad, "numeroPersonas" to comida.numeroPersonas, "picante" to comida.picante)).responseString { request, _, result ->
+        fun editarIngrediente(ingredientes: Ingredientes) {
+            "${ip}/${ingredientes.idIngredientes}".httpPut(listOf(
+                    "nombreIngrediente" to ingredientes.nombreIngrediente,
+                    "cantidad" to ingredientes.cantidad,
+                    "descripcionPreparacion" to ingredientes.descripcionPreparacion,
+                    "opcional" to ingredientes.opcional,
+                    "tipoIngrediente" to ingredientes.tipoIngrediente,
+                    "necesitaRefrigeracion" to ingredientes.necesitaRefrigeracion,
+                    "idComida" to ingredientes.idComida))
+                    .responseString { request, _, result ->
                 Log.i("http-2", request.toString())
             }
         }
@@ -97,7 +116,7 @@ class BaseDatosComida() {
             }
             for (i in 0 until aux.length()) {
 
-                val idIngredientes = resp.getJSONObject(i).getInt("idIngredientes")
+                val idIngredientes  = resp.getJSONObject(i).getInt("id")
                 val nombreIngrediente = resp.getJSONObject(i).getString("nombreIngrediente")
                 val cantidad = resp.getJSONObject(i).getInt("cantidad")
                 val descripcionPreparacion = resp.getJSONObject(i).getString("descripcionPreparacion")
@@ -114,6 +133,14 @@ class BaseDatosComida() {
         }
 
     }
+
+
+
+
+
+
+
+
+
+
 }
-
-
