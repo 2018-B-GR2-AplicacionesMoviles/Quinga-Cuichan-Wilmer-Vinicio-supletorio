@@ -24,35 +24,40 @@ import java.util.*
 class CrearIngredientesActivity : AppCompatActivity() {
 
 
-    var tipo = false
-    var idC = 0
-    var opcion11: String = ""
-    var opcion22: String = ""
+    // var tipo = false
+    //var idC = 0
+    //var opcion11: String = ""
+    //var opcion22: String = ""
 
 
-    var pathActualFoto = ""
-    var respuestaBarcode = ArrayList<String>()
+    //var pathActualFoto = ""
+    //var respuestaBarcode = ArrayList<String>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_ingredientes)
 
-        val type = intent.getStringExtra("tipo")
+        /* val type = intent.getStringExtra("tipo")
 
-        val ingredientesRecivida = intent.getParcelableExtra<Ingredientes>("Ingredientes")
-        idC = ingredientesRecivida.idComida
+         val ingredientesRecivida = intent.getParcelableExtra<Ingredientes>("Ingredientes")
+         idC = ingredientesRecivida.idComida
+         Log.i("csdcsdc","cccccccc")
 
-        if (type == "Edit") {
-            txt_id_ingredienteCrear.setText(ingredientesRecivida.idIngredientes.toString())
-            txt_nombres_ingredienteCrear.setText(ingredientesRecivida.nombreIngrediente.toString())
-            txt_cantidadCrear.setText(ingredientesRecivida.cantidad.toString())
-            txt_descripcionPreparacionCrear.setText(ingredientesRecivida.descripcionPreparacion.toString())
-            txt_tipoIngrediente.setText(ingredientesRecivida.tipoIngrediente.toString())
-            tipo = true
-        }
+
+         if (type == "Edit") {
+             txt_id_ingredienteCrear.setText(ingredientesRecivida.idIngredientes.toString())
+             txt_nombres_ingredienteCrear.setText(ingredientesRecivida.nombreIngrediente.toString())
+             txt_cantidadCrear.setText(ingredientesRecivida.cantidad.toString())
+             txt_descripcionPreparacionCrear.setText(ingredientesRecivida.descripcionPreparacion.toString())
+             txt_tipoIngrediente.setText(ingredientesRecivida.tipoIngrediente.toString())
+             tipo = true
+         }
+ */
 
     }
+
+    /*
 
     fun guardarDatos() {
         if (txt_id_ingredienteCrear.text.toString().isEmpty() || txt_nombres_ingredienteCrear.text.toString().isEmpty() || txt_cantidadCrear.text.toString().isEmpty() || txt_descripcionPreparacionCrear.text.toString().isEmpty() || txt_tipoIngrediente.text.toString().isEmpty()) {
@@ -166,5 +171,5 @@ class CrearIngredientesActivity : AppCompatActivity() {
     companion object {
         val TOMAR_FOTO_REQUEST = 1
     }
-
+*/
 }

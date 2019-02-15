@@ -9,26 +9,27 @@ module.exports = {
 
   attributes: {
  nombre:{
-  type: "string"
+  type: 'string'
   },
   apellido:{
-    type: "string"
+    type: 'string'
   },
   correo:{
-      type: "string"
+      type: 'string'
   },
   fechaNacimiento:{
-  		type:"string"
+  		type:'string'
   },
   password:{
-  		type:"string"
+  		type:'string'
   },
   total_oro:{
-  type:"integer"
+  type:'integer'
   },
   total_experiencia:{
-  type:"integer"
+  type:'integer'
   }
+
   },
 
 };

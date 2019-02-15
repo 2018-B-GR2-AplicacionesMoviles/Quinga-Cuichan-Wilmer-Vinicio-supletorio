@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText2_password"
+        android:id="@+id/editText2_passwordLogin"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -20,10 +20,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3_correo" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3_correoLogin" />
 
     <EditText
-        android:id="@+id/editText3_correo"
+        android:id="@+id/editText3_correoLogin"
         android:layout_width="239dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button4_login"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText2_passwordLogin"
         app:layout_constraintVertical_bias="0.191" />
 
     <Button
@@ -64,6 +64,6 @@
         android:text="@string/botonLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText2_passwordLogin"
         app:layout_constraintVertical_bias="0.187" />
 </android.support.constraint.ConstraintLayout>

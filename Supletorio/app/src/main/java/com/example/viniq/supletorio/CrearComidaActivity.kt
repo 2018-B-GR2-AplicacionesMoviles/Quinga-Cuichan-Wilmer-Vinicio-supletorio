@@ -94,9 +94,6 @@ class CrearComidaActivity : AppCompatActivity() {
                 BaseDatosComida.insertarComida(comidaComida)
 
             }
-
-
-
             Toasty.success(this, "Datos registrados", Toast.LENGTH_LONG, true).show()
             val intent = Intent(this, MenuPrincipalActivity::class.java)
             startActivity(intent)
