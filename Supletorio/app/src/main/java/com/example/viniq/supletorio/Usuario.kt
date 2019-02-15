@@ -4,7 +4,11 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
-class Usuario(var nombre: String, var apellido: String, var fechaNacimiente: String, var correo: String, var password: String
+class Usuario(var nombre: String,
+              var apellido: String,
+              var fechaNacimiente: String,
+              var correo: String,
+              var password: String
 
 
 ) : Parcelable {

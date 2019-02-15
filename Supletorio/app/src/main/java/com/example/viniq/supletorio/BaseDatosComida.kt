@@ -12,17 +12,12 @@ import org.json.JSONArray
 class BaseDatosComida() {
     companion object {
 
-        var ip = "http://192.168.1.9:1337/comida"
+        var ip = "http://172.29.64.230:1337/comida"
         var aux = JSONArray()
         lateinit var resp: JSONArray
 
         fun insertarComida(comida: Comida) {
-            ip.httpPost(listOf(
-                    "nombrePlato" to comida.nombrePlato,
-                    "descripcionPlato" to comida.descripcionPlato,
-                    "nacionalidad" to comida.nacionalidad,
-                    "numeroPersonas" to comida.numeroPersonas,
-                    "picante" to comida.picante)).responseString { request, _, result ->
+            ip.httpPost(listOf("nombrePlato" to comida.nombrePlato, "descripcionPlato" to comida.descripcionPlato, "nacionalidad" to comida.nacionalidad, "numeroPersonas" to comida.numeroPersonas, "picante" to comida.picante)).responseString { request, _, result ->
                 Log.i("http-2", request.toString())
             }
         }
@@ -57,6 +52,7 @@ class BaseDatosComida() {
                 val numeroPersonas = resp.getJSONObject(i).getInt("numeroPersonas")
                 val picante = resp.getJSONObject(i).getBoolean("picante")
                 val comidaComida = Comida(idComida, nombrePlato, descripcionPlato, nacionalidad, numeroPersonas, picante)
+
                 comida.add(comidaComida)
 
 
@@ -72,16 +68,10 @@ class BaseDatosComida() {
             }
         }
 
-        fun editarComida(comida: Comida){
-            "${ip}/${comida.idComida}".httpPut(listOf(
-                    "nombrePlato" to comida.nombrePlato,
-                    "descripcionPlato" to comida.descripcionPlato,
-                    "nacionalidad" to comida.nacionalidad,
-                    "numeroPersonas" to comida.numeroPersonas,
-                    "picante" to comida.picante))
-                    .responseString{ request, _, result ->
-                        Log.i("http-2",request.toString())
-                    }
+        fun editarComida(comida: Comida) {
+            "${ip}/${comida.idComida}".httpPut(listOf("nombrePlato" to comida.nombrePlato, "descripcionPlato" to comida.descripcionPlato, "nacionalidad" to comida.nacionalidad, "numeroPersonas" to comida.numeroPersonas, "picante" to comida.picante)).responseString { request, _, result ->
+                Log.i("http-2", request.toString())
+            }
         }
 
 

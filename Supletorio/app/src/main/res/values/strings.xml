@@ -17,6 +17,13 @@
     <string name="picante">Picante</string>
     <string name="cancelar">Cancelar</string>
     <string name="guardar">Guardar</string>
+    <string name="nuevoBoton">Nuevo</string>
+    <string name="nombreIngrediente">Nombre Ingrediente</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="descripcionPreparacion">Descripcion Preparacion</string>
+    <string name="opcional">Opcional</string>
+    <string name="tipoIngrediente">Tipo Ingrediente</string>
+    <string name="necesitaRefrigeracion">Necesita Refrigeracion</string>
 
 
 </resources>

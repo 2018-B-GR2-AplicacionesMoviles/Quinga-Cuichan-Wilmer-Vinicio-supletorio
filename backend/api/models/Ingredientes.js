@@ -1,5 +1,5 @@
 /**
- * Usuario.js
+ * Ingredientes.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,28 +8,32 @@
 module.exports = {
 
   attributes: {
- nombre:{
+  nombreIngrediente:{
   type: "string"
   },
-  apellido:{
-    type: "string"
+  cantidad :{
+    type: "number"
   },
-  correo:{
+  descripcionPreparacion :{
       type: "string"
   },
-  fechaNacimiento:{
+  opcional :{
+  		type:"boolean"
+  },
+  tipoIngrediente :{
   		type:"string"
   },
-  password:{
-  		type:"string"
+  necesitaRefrigeracion :{
+    		type:"boolean"
   },
-  total_oro:{
-  type:"integer"
+  comidaId:{
+      		type:"number"
   },
-  total_experiencia:{
-  type:"integer"
   }
-  },
+
+
+
+
 
 };
 

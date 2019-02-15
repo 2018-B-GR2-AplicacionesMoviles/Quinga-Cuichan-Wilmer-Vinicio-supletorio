@@ -72,6 +72,8 @@ module.exports = {
       ****************************************************************************/
       // ssl: true,
 
+       //  url: 'mysql://lkjdsf4a23d9xf4:kkwer4l8adsfasd@u23jrsdfsdf0sad.aasdfsdfsafd.us-west-2.ere.amazonaws.com:3306/ke9944a4x23423g',
+
     },
 
   },

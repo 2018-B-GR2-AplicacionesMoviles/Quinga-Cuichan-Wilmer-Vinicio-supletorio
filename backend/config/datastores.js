@@ -34,6 +34,10 @@ module.exports.datastores = {
 
   default: {
 
+   // adapter: require('sails-mysql'),
+    //url: 'mysql://root:123456@localhost:3306/movilesbase',
+
+
     /***************************************************************************
     *                                                                          *
     * Want to use a different database during development?                     *

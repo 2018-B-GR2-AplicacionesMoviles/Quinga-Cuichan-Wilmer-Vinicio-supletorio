@@ -10,6 +10,9 @@ import android.util.Log
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
+import com.beust.klaxon.Klaxon
+import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.result.Result
 
 class ListarComidaActivity : AppCompatActivity() {
 
@@ -66,18 +69,16 @@ class ListarComidaActivity : AppCompatActivity() {
                                 true
                             }
 
-                            R.id.menu_lista_aplicaciones->{
-                                val intent = Intent(this@ListarComidaActivity,ListaIngredientesActivity::class.java)
+                            R.id.menu_lista_aplicaciones -> {
+                                val intent = Intent(this@ListarComidaActivity, ListaIngredientesActivity::class.java)
                                 startActivity(intent)
-                                Toast.makeText(this@ListarComidaActivity,"Su seleccion:"+item.title, Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
                                 true
                             }
-
                             else -> false
                         }
                     })
                     popupMenu.show()
-
                 }
                 Toast.makeText(applicationContext, comi?.get(posicion)?.nombrePlato, Toast.LENGTH_SHORT).show()
             }
@@ -85,9 +86,13 @@ class ListarComidaActivity : AppCompatActivity() {
 
         lista?.layoutManager = layoutManager
         lista?.adapter = adaptador
-
+        adaptador?.notifyDataSetChanged()
 
     }
+
+
+
+
 
 
 }

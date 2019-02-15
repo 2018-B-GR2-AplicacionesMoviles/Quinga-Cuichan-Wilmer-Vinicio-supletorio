@@ -25,5 +25,11 @@ module.exports = {
   }
   },
 
+  /////relaciones one to many
+ // ingredientes:{
+  //collection:'ingrediente'
+  //via: 'owner'
+ // }
+
 };
 

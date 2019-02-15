@@ -22,7 +22,8 @@
         <activity android:name=".MenuPrincipalActivity" />
         <activity android:name=".CrearComidaActivity" />
         <activity android:name=".ListarComidaActivity" />
-        <activity android:name=".ListaIngredientesActivity"></activity>
+        <activity android:name=".ListaIngredientesActivity" />
+        <activity android:name=".lista_ingredientesActivity"></activity>
     </application>
 
 </manifest>
