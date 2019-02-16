@@ -13,17 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         button3_registrarse.setOnClickListener {
             this.irRegistrar()
         }
 
-        var correo: String = editText3_correoLogin.text.toString()
-        var password: String = editText2_passwordLogin.text.toString()
-
-        Log.i("recivido", correo.toString())
-
         button4_login.setOnClickListener {
-            this.irMenuPrincipal(correo, password)
+            this.irMenuPrincipal()
         }
     }
 
@@ -33,17 +29,15 @@ class MainActivity : AppCompatActivity() {
         startActivity(registar)
     }
 
-    fun irMenuPrincipal(correo: String, password: String) {
+    fun irMenuPrincipal() {
 
-        val datos = BaseDatosUsuarios.getListUsuario("a", "a")
-        Log.i("recivido", datos.toString())
+        val correo = correoLogin.text.toString()
+        val password = passwordLogin.text.toString()
 
-        if (datos == true) {
+         val datos = BaseDatosUsuarios.getListaLogin(correo, password)
+        Log.i("recividoffff", datos.toString())
 
-            val menuPrincipal = Intent(this, MenuPrincipalActivity::class.java)
-            startActivity(menuPrincipal)
-
-        } else {
+        if (datos.length() == 0) {
 
             Alerter.create(this)
                 .setTitle("Datos Incorrectos")
@@ -51,6 +45,16 @@ class MainActivity : AppCompatActivity() {
                 .setBackgroundColorRes(R.color.error_color_material_dark)
                 .enableSwipeToDismiss()
                 .show()
+
+
+        } else {
+
+            val menuPrincipal = Intent(this, MenuPrincipalActivity::class.java)
+            startActivity(menuPrincipal)
+
+
         }
+
+
     }
 }

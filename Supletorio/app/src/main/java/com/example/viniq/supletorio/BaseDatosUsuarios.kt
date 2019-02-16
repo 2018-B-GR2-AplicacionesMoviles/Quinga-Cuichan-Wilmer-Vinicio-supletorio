@@ -11,11 +11,10 @@ import org.json.JSONObject
 class BaseDatosUsuarios() {
 
     companion object {
-        var bool : Boolean = false
+        var bool: Boolean = false
 
-        var ip = "http://172.29.64.172:1337/usuario"
+        var ip = "http://192.168.1.9:1337/Usuario"
         var aux = JSONArray()
-        lateinit var resp: JSONArray
 
         fun insertarUsuarios(usuario: Usuario) {
             ip.httpPost(
@@ -33,23 +32,28 @@ class BaseDatosUsuarios() {
                 }
         }
 
-
-        fun getListUsuario(email: String, password: String): Boolean {
-
+        fun getListaLogin(correo: String, password: String): JSONArray {
 
 
-            "http://172.29.64.172:1337/Usuario/login"
-                .httpPost(
-                    listOf(
-                        "correo" to email,
-                        "password" to password
-                    )
-                )
 
-            return bool
+            "${ip}/login?correo=${correo}&password=${password}".httpPost().responseJson { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http-2", "Error: ${ex}")
+                    }
+                    is Result.Success -> {
+                        val datos = result.get()
+                        aux = datos.array()
+                        Log.i("http-2", "DatosLogin: ${aux}")
+                    }
+                }
+            }
+            return aux
         }
 
-    }
 
+
+    }
 
 }

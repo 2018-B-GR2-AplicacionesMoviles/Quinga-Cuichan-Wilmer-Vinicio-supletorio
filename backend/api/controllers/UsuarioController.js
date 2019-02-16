@@ -13,7 +13,7 @@ module.exports = {
       Usuario.find({
         where: {
           correo: parametros.correo,
-          passwpr: parametros.passwpr,
+          password: parametros.password
 
         }
       });

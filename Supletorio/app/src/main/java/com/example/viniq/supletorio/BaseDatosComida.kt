@@ -12,7 +12,7 @@ import org.json.JSONArray
 class BaseDatosComida() {
     companion object {
 
-        var ip = "http://172.29.64.172:1337/comida"
+        var ip = "http://192.168.1.9:1337/comida"
         var aux = JSONArray()
         lateinit var resp: JSONArray
 
