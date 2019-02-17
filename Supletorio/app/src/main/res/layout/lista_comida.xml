@@ -15,63 +15,63 @@
     tools:layout_editor_absoluteY="86dp">
 
     <TextView
-        android:id="@+id/nombre_platoLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nombrePlato"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="8dp" />
+            android:id="@+id/nombre_platoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombrePlato"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="14sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" android:fontFamily="casual"/>
 
     <TextView
-        android:id="@+id/descripconPlatoLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/descripcionPlato"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_platoLista"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+            android:id="@+id/descripconPlatoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/descripcionPlato"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_platoLista"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" android:fontFamily="casual"/>
 
     <TextView
-        android:id="@+id/nacionalidadPlatoLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/nacionalidadPlato"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/descripconPlatoLista"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+            android:id="@+id/nacionalidadPlatoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nacionalidadPlato"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/descripconPlatoLista"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" android:fontFamily="casual"/>
 
     <TextView
-        android:id="@+id/numeroPlatoLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/numeroPersonasPlato"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/nacionalidadPlatoLista"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+            android:id="@+id/numeroPlatoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/numeroPersonasPlato"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/nacionalidadPlatoLista"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" android:fontFamily="casual"/>
 
     <TextView
-        android:id="@+id/picantePlatoLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/picante"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroPlatoLista"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+            android:id="@+id/picantePlatoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/picante"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numeroPlatoLista"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" android:fontFamily="casual"/>
 </android.support.constraint.ConstraintLayout>

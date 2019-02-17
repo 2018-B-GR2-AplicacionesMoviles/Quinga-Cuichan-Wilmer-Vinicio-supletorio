@@ -34,8 +34,6 @@ class BaseDatosUsuarios() {
 
         fun getListaLogin(correo: String, password: String): JSONArray {
 
-
-
             "${ip}/login?correo=${correo}&password=${password}".httpPost().responseJson { request, response, result ->
                 when (result) {
                     is Result.Failure -> {
@@ -43,7 +41,7 @@ class BaseDatosUsuarios() {
                         Log.i("http-2", "Error: ${ex}")
                     }
                     is Result.Success -> {
-                        val datos = result.get()
+                         val datos = result.get()
                         aux = datos.array()
                         Log.i("http-2", "DatosLogin: ${aux}")
                     }

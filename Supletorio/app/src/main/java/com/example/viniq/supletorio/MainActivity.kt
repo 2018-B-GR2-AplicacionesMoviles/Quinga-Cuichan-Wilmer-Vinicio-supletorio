@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         button4_login.setOnClickListener {
             this.irMenuPrincipal()
+
+
         }
     }
 
@@ -51,7 +53,8 @@ class MainActivity : AppCompatActivity() {
 
             val menuPrincipal = Intent(this, MenuPrincipalActivity::class.java)
             startActivity(menuPrincipal)
-
+            correoLogin.setText("")
+            passwordLogin.setText("")
 
         }
 

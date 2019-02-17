@@ -7,23 +7,25 @@
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="fechaNacimiento">Fecha de Nacimiento</string>
-    <string name="PadreComida">Comida</string>
+    <string name="PadreComida">Registrar Comida</string>
     <string name="ListarTablaPadre">Listar Comida</string>
     <string name="jugar">Jugar</string>
     <string name="nombrePlato">Nombre Plato</string>
-    <string name="descripcionPlato">Descripcion Plato</string>
+    <string name="descripcionPlato">Descripción Plato</string>
     <string name="nacionalidadPlato">Nacionalidad</string>
-    <string name="numeroPersonasPlato">Numero Personas</string>
+    <string name="numeroPersonasPlato">Número Personas</string>
     <string name="picante">Picante</string>
     <string name="cancelar">Cancelar</string>
     <string name="guardar">Guardar</string>
     <string name="nuevoBoton">Nuevo</string>
     <string name="nombreIngrediente">Nombre Ingrediente</string>
     <string name="cantidad">Cantidad</string>
-    <string name="descripcionPreparacion">Descripcion Preparacion</string>
+    <string name="descripcionPreparacion">Descripción Preparación</string>
     <string name="opcional">Opcional</string>
     <string name="tipoIngrediente">Tipo Ingrediente</string>
-    <string name="necesitaRefrigeracion">Necesita Refrigeracion</string>
+    <string name="necesitaRefrigeracion">Necesita Refrigeración</string>
+    <string name="id">ID</string>
+    <string name="tomarFoto">Tomar Fotografia</string>
 
 
 </resources>

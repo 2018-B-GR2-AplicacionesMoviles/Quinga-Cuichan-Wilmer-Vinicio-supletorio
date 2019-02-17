@@ -42,14 +42,14 @@ class AdaptadorComida(private val listaComida: ArrayList<Comida>, var clickListe
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = items?.get(position)
 
-        holder.nombrePlatoC?.text = "Nombre Plato: " + item?.nombrePlato
-        holder.descripcionPlatoC?.text = "Descripcion Plato: " + item?.descripcionPlato
-        holder.nacionalidadC?.text = "Nacionalidad: " + item?.nacionalidad
-        holder.numeroPersonasC?.text = "Numero Personas: " + item?.numeroPersonas.toString()
+        holder.nombrePlatoC?.text = "NOMBRE PLATO:  " + item?.nombrePlato
+        holder.descripcionPlatoC?.text = "DESCRIPCIÓN:  " + item?.descripcionPlato
+        holder.nacionalidadC?.text = "NACIONALIDAD: " + item?.nacionalidad
+        holder.numeroPersonasC?.text = "NÚMERO PERSONAS:    " + item?.numeroPersonas.toString()
         if (item?.picante == true) {
-            holder.picanteC?.text = "Picante: Si"
+            holder.picanteC?.text = "PICANTE:   Si"
         } else {
-            holder.picanteC?.text = "Picante: No"
+            holder.picanteC?.text = "PICANTE:   No"
         }
     }
 

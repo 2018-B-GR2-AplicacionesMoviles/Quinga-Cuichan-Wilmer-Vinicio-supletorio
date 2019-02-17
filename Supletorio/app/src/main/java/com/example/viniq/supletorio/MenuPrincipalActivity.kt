@@ -3,6 +3,7 @@ package com.example.viniq.supletorio
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_menu_principal.*
 
 class MenuPrincipalActivity : AppCompatActivity() {
@@ -10,6 +11,9 @@ class MenuPrincipalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
+
+
+
         button_PrincipalComida.setOnClickListener {
             this.irCrearComida()
         }

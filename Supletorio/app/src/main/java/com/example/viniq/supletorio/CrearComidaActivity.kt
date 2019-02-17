@@ -48,7 +48,11 @@ class CrearComidaActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 opcion = parent!!.getItemAtPosition(position).toString()
                 Log.i("opcion", opcion)
-                Toast.makeText(parent!!.context, "Seleccionado:" + parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    parent!!.context,
+                    "Seleccionado:" + parent.getItemAtPosition(position).toString(),
+                    Toast.LENGTH_LONG
+                ).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -69,7 +73,8 @@ class CrearComidaActivity : AppCompatActivity() {
 
     fun guardarDatos() {
         if (editText_nombrePlato.text.toString().isEmpty() || editText2_descripcionPlato.text.toString().isEmpty() || editText3_nacionalidad.text.toString().isEmpty() || editText4_numeroPersonas.text.toString().isEmpty()) {
-            Alerter.create(this).setTitle("Campos Vacios").setText("Completa la informacion de todos los campos").setBackgroundColorRes(R.color.error_color_material_light).enableSwipeToDismiss().show()
+            Alerter.create(this).setTitle("Campos Vacios").setText("Completa la informacion de todos los campos")
+                .setBackgroundColorRes(R.color.error_color_material_light).enableSwipeToDismiss().show()
         } else {
             var nombrePlato = editText_nombrePlato.text.toString()
             var descripcionPlato = editText2_descripcionPlato.text.toString()
@@ -82,22 +87,29 @@ class CrearComidaActivity : AppCompatActivity() {
                 picante = false
             }
 
-
             if (tipo == true) {
-                var comidaComida = Comida(idComida, nombrePlato, descripcionPlato, nacionalidad, numeroPersonas, picante)
-
-
+                var comidaComida =
+                    Comida(idComida, nombrePlato, descripcionPlato, nacionalidad, numeroPersonas, picante)
                 BaseDatosComida.editarComida(comidaComida)
+
+                Toasty.success(this, "Datos ACtualizados", Toast.LENGTH_LONG, true).show()
+                val intent = Intent(this, ListarComidaActivity::class.java)
+                startActivity(intent)
+                this.finish()
+
+
 
             } else {
                 var comidaComida = Comida(0, nombrePlato, descripcionPlato, nacionalidad, numeroPersonas, picante)
                 BaseDatosComida.insertarComida(comidaComida)
+                Toasty.success(this, "Datos registrados", Toast.LENGTH_LONG, true).show()
+                val intent = Intent(this, MenuPrincipalActivity::class.java)
+                startActivity(intent)
+                this.finish()
+
 
             }
-            Toasty.success(this, "Datos registrados", Toast.LENGTH_LONG, true).show()
-            val intent = Intent(this, MenuPrincipalActivity::class.java)
-            startActivity(intent)
-            this.finish()
+
         }
     }
 

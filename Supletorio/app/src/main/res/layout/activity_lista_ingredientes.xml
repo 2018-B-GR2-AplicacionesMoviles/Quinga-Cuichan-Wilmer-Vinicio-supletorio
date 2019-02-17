@@ -7,81 +7,82 @@
     tools:context=".ListaIngredientesActivity">
 
     <Button
-        android:id="@+id/btn_nuevo_ingredientes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/nuevoBoton"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/lista_ingredientesLista"
-        app:layout_constraintTop_toBottomOf="@+id/lista_ingredientesLista" />
+            android:id="@+id/btn_nuevo_ingredientes"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nuevoBoton"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/lista_ingredientesLista"
+            app:layout_constraintTop_toBottomOf="@+id/lista_ingredientesLista"
+            style="@android:style/Widget.Button.Inset" android:fontFamily="casual"/>
 
     <LinearLayout
-        android:id="@+id/lista_ingredientesLista"
-        android:layout_width="342dp"
-        android:layout_height="151dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+            android:id="@+id/lista_ingredientesLista"
+            android:layout_width="342dp"
+            android:layout_height="172dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/hijonombrePlato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/nombrePlato"
-            android:textColor="@color/colorAccent" />
+                android:id="@+id/hijonombrePlato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/nombrePlato"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" android:fontFamily="casual"/>
 
         <TextView
-            android:id="@+id/hijoDescripcionPlato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/descripcionPlato"
-            android:textColor="@color/colorAccent" />
+                android:id="@+id/hijoDescripcionPlato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/descripcionPlato"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" android:fontFamily="casual"/>
 
         <TextView
-            android:id="@+id/hijoNacionalidad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/nacionalidadPlato"
-            android:textColor="@color/colorAccent" />
+                android:id="@+id/hijoNacionalidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/nacionalidadPlato"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" android:fontFamily="casual"/>
 
         <TextView
-            android:id="@+id/hijoNumPersonas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/numeroPersonasPlato"
-            android:textColor="@color/colorAccent" />
+                android:id="@+id/hijoNumPersonas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/numeroPersonasPlato"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" android:fontFamily="casual"/>
 
         <TextView
-            android:id="@+id/hijoPicante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/picante"
-            android:textColor="@color/colorAccent" />
+                android:id="@+id/hijoPicante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/picante"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" android:fontFamily="casual"/>
     </LinearLayout>
 
     <LinearLayout

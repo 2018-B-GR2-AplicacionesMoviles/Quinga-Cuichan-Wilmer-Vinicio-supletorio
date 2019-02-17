@@ -28,20 +28,20 @@ class ListaIngredientesActivity : AppCompatActivity() {
 
         Log.i("ddddd", "dldlldldldld")
         val comidaRecivido = intent.getParcelableExtra<Comida>("Comida")
-        hijonombrePlato.text = "Nombre Plato: " + comidaRecivido.nombrePlato.toString()
-        hijoDescripcionPlato.text = "Descripcion Plato: " + comidaRecivido.descripcionPlato.toString()
-        hijoNacionalidad.text = "Nacionalidad Plato: " + comidaRecivido.nacionalidad.toString()
-        hijoNumPersonas.text = "Numero Personas Plato: " + comidaRecivido.numeroPersonas.toInt()
+        hijonombrePlato.text = "NOMBRE PLATO:   " + comidaRecivido.nombrePlato.toString()
+        hijoDescripcionPlato.text = "DESCRIPCIÓN:   " + comidaRecivido.descripcionPlato.toString()
+        hijoNacionalidad.text = "NACIONALIDAD:  " + comidaRecivido.nacionalidad.toString()
+        hijoNumPersonas.text = "NÚMERO PERSONAS:    " + comidaRecivido.numeroPersonas.toInt()
 
         Log.i("ddddd", comidaRecivido.picante.toString())
 
 
         if (comidaRecivido.picante === true) {
-            hijoPicante.text = "Plato Picante: Si "
+            hijoPicante.text = "PICANTE:    Si"
 
 
         } else {
-            hijoPicante.text = "Plato Picante: No "
+            hijoPicante.text = "PICANTE:    No "
 
         }
         idComida = comidaRecivido.idComida.toInt()
@@ -120,15 +120,16 @@ class ListaIngredientesActivity : AppCompatActivity() {
 
         btn_nuevo_ingredientes.setOnClickListener {
 
-            this.irCrearAplicacion(comi?.get(0) as Ingredientes)
+          //   this.irCrearIngredientes(comi?.get(0) as Ingredientes)
+            this.irCrearIngredientes()
         }
 
 
     }
 
-    fun irCrearAplicacion(ingredientes: Ingredientes) {
+    fun irCrearIngredientes( ) {
         val intent = Intent(this, CrearIngredientesActivity::class.java)
-        intent.putExtra("Ingredientes", ingredientes)
+        //  intent.putExtra("Ingredientes", ingredientes)
         intent.putExtra("tipo", "Crear")
         startActivity(intent)
     }

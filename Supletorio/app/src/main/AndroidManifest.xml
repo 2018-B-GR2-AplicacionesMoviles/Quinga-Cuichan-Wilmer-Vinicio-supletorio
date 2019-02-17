@@ -15,6 +15,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="barcode"/>
+        <!-- To use multiple models: android:value="barcode,model2,model3" -->
+
+
+        <!-- To use multiple models: android:value="barcode,model2,model3" -->
+        <provider
+                android:name=".GenericFileProvider"
+                android:authorities="com.example.viniq.supletorio"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+
+
+
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -42,11 +42,6 @@ class ListarComidaActivity : AppCompatActivity() {
                     popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
                     popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                         when (item.itemId) {
-                            R.id.menu_eliminar -> {
-                                BaseDatosComida.eliminar(comi?.get(posicion)?.idComida!!)
-                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
-                                true
-                            }
                             R.id.menu_editar -> {
                                 val intent = Intent(this@ListarComidaActivity, CrearComidaActivity::class.java)
                                 intent.putExtra("Comida", comi?.get(posicion) as Comida)
@@ -55,6 +50,23 @@ class ListarComidaActivity : AppCompatActivity() {
                                 Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
                                 true
 
+                            }
+
+                            R.id.menu_eliminar -> {
+                                BaseDatosComida.eliminar(comi?.get(posicion)?.idComida!!)
+                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
+                                true
+                            }
+
+
+
+                            R.id.menu_lista_aplicaciones -> {
+                                val intent = Intent(this@ListarComidaActivity, ListaIngredientesActivity::class.java)
+                                intent.putExtra("Comida", comi?.get(posicion) as Comida)
+
+                                startActivity(intent)
+                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
+                                true
                             }
 
                             R.id.menu_compartir -> {
@@ -69,14 +81,7 @@ class ListarComidaActivity : AppCompatActivity() {
                                 true
                             }
 
-                            R.id.menu_lista_aplicaciones -> {
-                                val intent = Intent(this@ListarComidaActivity, ListaIngredientesActivity::class.java)
-                                intent.putExtra("Comida", comi?.get(posicion) as Comida)
 
-                                startActivity(intent)
-                                Toast.makeText(this@ListarComidaActivity, "Su seleccion:" + item.title, Toast.LENGTH_SHORT).show()
-                                true
-                            }
                             else -> false
                         }
                     })
