@@ -80,7 +80,7 @@ class BaseDatosComida() {
         }
 
 
-        fun getListaIdIngredientes(id: Int): ArrayList<Ingredientes> {
+     /*   fun getListaIdIngredientes(id: Int): ArrayList<Ingredientes> {
 
             val ingredientes: ArrayList<Ingredientes> = ArrayList()
             "${ip}/?idComida=${id}".httpGet().responseJson { request, response, result ->
@@ -102,7 +102,7 @@ class BaseDatosComida() {
             }
             for (i in 0 until aux.length()) {
 
-                val idIngredientes = resp.getJSONObject(i).getInt("idIngredientes")
+                val idIngredientes = resp.getJSONObject(i).getLong("idIngredientes")
                 val nombreIngrediente = resp.getJSONObject(i).getString("nombreIngrediente")
                 val cantidad = resp.getJSONObject(i).getInt("cantidad")
                 val descripcionPreparacion = resp.getJSONObject(i).getString("descripcionPreparacion")
@@ -116,7 +116,11 @@ class BaseDatosComida() {
             }
             Log.i("http-2", "DatosReturnAP: ${ingredientes}")
             return ingredientes
-        }
+        }*/
+
+
+
+
 
     }
 }

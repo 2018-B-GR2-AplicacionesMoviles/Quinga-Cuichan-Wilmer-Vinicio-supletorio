@@ -1,13 +1,16 @@
 package com.example.viniq.supletorio
 
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
+ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import kotlinx.android.synthetic.main.listar_ingredientes.view.*
+import kotlinx.android.synthetic.main.lista_ingredientes.view.*
 
-class AdaptadorIngredientes(private val listaIngredientes: ArrayList<Ingredientes>, var clickListener: ClickListener) : RecyclerView.Adapter<AdaptadorIngredientes.MyViewHolder>() {
+class AdaptadorIngredientes(
+    private val listaIngredientes: ArrayList<Ingredientes>,
+    var clickListener: ClickListener
+) : RecyclerView.Adapter<AdaptadorIngredientes.MyViewHolder>() {
 
     var items: ArrayList<Ingredientes>? = null
     var viewHolder: MyViewHolder? = null
@@ -17,7 +20,7 @@ class AdaptadorIngredientes(private val listaIngredientes: ArrayList<Ingrediente
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdaptadorIngredientes.MyViewHolder {
-        val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.listar_ingredientes, parent, false)
+        val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.lista_ingredientes, parent, false)
         viewHolder = MyViewHolder(itemView, clickListener)
         return viewHolder!!
     }
@@ -31,10 +34,18 @@ class AdaptadorIngredientes(private val listaIngredientes: ArrayList<Ingrediente
 
         holder.nombreIngrediente?.text = "Nombre Ingredientes: " + item?.nombreIngrediente
         holder.cantidad?.text = "Cantidad: " + item?.cantidad
-        holder.descripcionPreparacion?.text = "Descripcion Preparacion : " + item?.descripcionPreparacion
-        holder.opcional?.text = "Opcional: " + item?.opcional
-        holder.tipoIngrediente?.text = "Tipo Ingredientes: " + item?.tipoIngrediente
-        holder.necesitaRefrigeracion?.text = "Necesita Refrigeracion: " + item?.nombreIngrediente
+        holder.descripcionPreparacion?.text = "Preparacion : " + item?.descripcionPreparacion
+        holder.necesitaRefrigeracion?.text = "Refrigeracion: " + item?.necesitaRefrigeracion
+
+        if (item?.necesitaRefrigeracion == true) {
+            holder.necesitaRefrigeracion?.text = "Refrigeracion: Si"
+
+        }
+        else {
+
+            holder.necesitaRefrigeracion?.text = "Refrigeracion: No"
+
+        }
     }
 
 
@@ -45,8 +56,6 @@ class AdaptadorIngredientes(private val listaIngredientes: ArrayList<Ingrediente
         var nombreIngrediente: TextView? = null
         var cantidad: TextView? = null
         var descripcionPreparacion: TextView? = null
-        var opcional: TextView? = null
-        var tipoIngrediente: TextView? = null
         var necesitaRefrigeracion: TextView? = null
         var listener: ClickListener? = null
 
@@ -54,8 +63,6 @@ class AdaptadorIngredientes(private val listaIngredientes: ArrayList<Ingrediente
             nombreIngrediente = vista.hijoNombreIngrediente
             cantidad = vista.hijoCantidad
             descripcionPreparacion = vista.hijoDescripcionPreparacion
-            opcional = vista.hijoOpcional
-            tipoIngrediente = vista.hijoTipoIngrediente
             necesitaRefrigeracion = vista.hijoNecesitaRefrigeracion
             this.listener = listener
             vista.setOnClickListener(this)

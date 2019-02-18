@@ -8,6 +8,11 @@
 module.exports = {
 
   attributes: {
+  idIngredientes:{
+    type: "number"
+
+  },
+
   nombreIngrediente:{
   type: "string"
   },

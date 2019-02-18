@@ -26,6 +26,7 @@
     <string name="necesitaRefrigeracion">Necesita Refrigeración</string>
     <string name="id">ID</string>
     <string name="tomarFoto">Tomar Fotografia</string>
+    <string name="idPadre">Id Padre</string>
 
 
 </resources>

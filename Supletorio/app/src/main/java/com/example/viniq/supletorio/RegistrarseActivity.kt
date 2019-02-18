@@ -1,18 +1,14 @@
 package com.example.viniq.supletorio
 
 import android.content.Intent
+ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.github.kittinunf.fuel.httpPost
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_registrarse.*
-import com.github.kittinunf.fuel.httpPost
-import com.github.kittinunf.result.Result
+
 import com.tapadoo.alerter.Alerter
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.activity_crear_comida.*
+import kotlinx.android.synthetic.main.activity_registrarse.*
 
 class RegistrarseActivity : AppCompatActivity() {
 

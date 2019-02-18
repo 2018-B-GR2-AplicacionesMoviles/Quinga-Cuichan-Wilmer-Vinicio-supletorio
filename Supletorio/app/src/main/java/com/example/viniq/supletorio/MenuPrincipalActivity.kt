@@ -1,10 +1,10 @@
 package com.example.viniq.supletorio
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu_principal.*
+
 
 class MenuPrincipalActivity : AppCompatActivity() {
 
@@ -34,7 +34,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
     }
 
-    fun irListarComida(){
+    fun irListarComida() {
 
         val listar = Intent(this, ListarComidaActivity::class.java)
         startActivity(listar)

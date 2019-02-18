@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import kotlinx.android.synthetic.main.lista_comida.view.*
+ import kotlinx.android.synthetic.main.lista_comida.view.*
 
-class AdaptadorComida(private val listaComida: ArrayList<Comida>, var clickListener: ClickListener) : RecyclerView.Adapter<AdaptadorComida.MyViewHolder>() {
+class AdaptadorComida(private val listaComida: ArrayList<Comida>, var clickListener: ClickListener) :
+    RecyclerView.Adapter<AdaptadorComida.MyViewHolder>() {
 
     var items: ArrayList<Comida>? = null
     var viewHolder: MyViewHolder? = null
@@ -63,10 +64,10 @@ class AdaptadorComida(private val listaComida: ArrayList<Comida>, var clickListe
         var listener: ClickListener? = null
 
         init {
-            nombrePlatoC = vista.nombre_platoLista
-            descripcionPlatoC = vista.descripconPlatoLista
-            nacionalidadC = vista.nacionalidadPlatoLista
-            numeroPersonasC = vista.numeroPlatoLista
+            nombrePlatoC = vista.hijoNombreIngrediente
+            descripcionPlatoC = vista.hijoCantidad
+            nacionalidadC = vista.hijoDescripcionPreparacion
+            numeroPersonasC = vista.hijoNecesitaRefrigeracion
             picanteC = vista.picantePlatoLista
             this.listener = listener
             vista.setOnClickListener(this)
