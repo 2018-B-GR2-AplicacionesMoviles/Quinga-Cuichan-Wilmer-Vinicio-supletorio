@@ -24,9 +24,17 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
         }
 
+        button3_Principaljugar.setOnClickListener {
+            this.irMenuJuego()
+        }
+
 
     }
 
+    fun irMenuJuego() {
+        val juego = Intent(this, MenuJuegoActivity::class.java)
+        startActivity(juego)
+    }
 
     fun irCrearComida() {
         val comida = Intent(this, CrearComidaActivity::class.java)

@@ -27,6 +27,9 @@
     <string name="id">ID</string>
     <string name="tomarFoto">Tomar Fotografia</string>
     <string name="idPadre">Id Padre</string>
-
-
+    <string name="btnregistrarIngrediente">Registrar Ingrediente</string>
+    <string name="btnVerIngredientes">Ver Ingredientes</string>
+    <string name="btnRecolectarBatalla">Recolectar o Batalla</string>
+    <string name="btnInfBatalla">Información Batalla</string>
+    <string name="btnPerfil">Perfil</string>
 </resources>
