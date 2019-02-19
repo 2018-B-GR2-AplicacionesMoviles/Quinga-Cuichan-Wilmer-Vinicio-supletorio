@@ -50,7 +50,7 @@ class RegistrarseActivity : AppCompatActivity() {
 
 
             var usuriosusuario =
-                Usuario(0, nombre, apellido, fechaNacimiente, correo, password)
+                Usuario(0, nombre, apellido, fechaNacimiente, correo, password,0,0)
             Log.i("ssss", usuriosusuario.toString())
 
 

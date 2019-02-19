@@ -32,4 +32,7 @@
     <string name="btnRecolectarBatalla">Recolectar o Batalla</string>
     <string name="btnInfBatalla">Información Batalla</string>
     <string name="btnPerfil">Perfil</string>
+    <string name="btnBuscar">Buscar</string>
+    <string name="buscarPorAtributo">Buscar por Atributo</string>
+    <string name="btnAñadir">Añadir</string>
 </resources>

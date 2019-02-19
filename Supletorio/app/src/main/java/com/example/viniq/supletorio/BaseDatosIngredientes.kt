@@ -62,36 +62,36 @@ class BaseDatosIngredientes() {
             }
             for (i in 0 until aux.length()) {
                 val id = resp.getJSONObject(i).getInt("id")
-                Log.i("dsssssssssssssssssss",id.toString())
+                Log.i("dsssssssssssssssssss", id.toString())
 
 
                 val idIngredientes = resp.getJSONObject(i).getLong("idIngredientes")
-                Log.i("dsssssssssssssssssss",idIngredientes.toString())
+                Log.i("dsssssssssssssssssss", idIngredientes.toString())
 
                 val nombreIngrediente = resp.getJSONObject(i).getString("nombreIngrediente")
-                Log.i("dsssssssssssssssssss",nombreIngrediente.toString())
+                Log.i("dsssssssssssssssssss", nombreIngrediente.toString())
 
                 val cantidad = resp.getJSONObject(i).getInt("cantidad")
-                Log.i("dsssssssssssssssssss",cantidad.toString())
+                Log.i("dsssssssssssssssssss", cantidad.toString())
 
                 val descripcionPreparacion = resp.getJSONObject(i).getString("descripcionPreparacion")
-                Log.i("dsssssssssssssssssss",descripcionPreparacion.toString())
+                Log.i("dsssssssssssssssssss", descripcionPreparacion.toString())
 
                 val opcional = resp.getJSONObject(i).getBoolean("opcional")
-                Log.i("dsssssssssssssssssss",opcional.toString())
+                Log.i("dsssssssssssssssssss", opcional.toString())
 
                 val tipoIngredienteUtilizados = resp.getJSONObject(i).getString("tipoIngredienteUtilizados")
-                Log.i("dsssssssssssssssssss",tipoIngredienteUtilizados.toString())
+                Log.i("dsssssssssssssssssss", tipoIngredienteUtilizados.toString())
 
                 val necesitaRefrigeracion = resp.getJSONObject(i).getBoolean("necesitaRefrigeracion")
 
-                Log.i("dsssssssssssssssssss",necesitaRefrigeracion.toString())
+                Log.i("dsssssssssssssssssss", necesitaRefrigeracion.toString())
 
                 val comidaId = resp.getJSONObject(i).getJSONObject("comidaId").getInt("id")
 
 
 
-                Log.i("dsssssssssssssssssss",comidaId.toString())
+                Log.i("dsssssssssssssssssss", comidaId.toString())
 
                 val app = Ingredientes(
                     id,
@@ -108,14 +108,10 @@ class BaseDatosIngredientes() {
 
 
                 ingredientes.add(app)
-             }
+            }
             Log.i("http-2", "DatosReturnIngredientes: ${ingredientes}")
             return ingredientes
         }
-
-
-
-
 
 
         fun eliminar(id: Int) {
@@ -143,7 +139,149 @@ class BaseDatosIngredientes() {
         }
 
 
+        fun buscar(nombre: String): ArrayList<Ingredientes> {
 
+            val aplicaciones: ArrayList<Ingredientes> = ArrayList()
+            "${ip}/?nombreIngrediente=${nombre}".httpGet().responseJson { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http-2", "Error: ${ex}")
+                    }
+                    is Result.Success -> {
+                        val datos = result.get()
+                        aux = datos.array()
+                        Log.i("http-2", "DatosIngredientes: ${aux}")
+                        Log.i("Tipo", "${aux::class.simpleName}")
+                    }
+
+                }
+                resp = result.get().array()
+
+            }
+            for (i in 0 until aux.length()) {
+
+                val id = resp.getJSONObject(i).getInt("id")
+
+                Log.i("dsssssssssssssssssss", id.toString())
+
+
+                val idIngredientes = resp.getJSONObject(i).getLong("idIngredientes")
+                Log.i("dsssssssssssssssssss", idIngredientes.toString())
+
+                val nombreIngrediente = resp.getJSONObject(i).getString("nombreIngrediente")
+                Log.i("dsssssssssssssssssss", nombreIngrediente.toString())
+
+                val cantidad = resp.getJSONObject(i).getInt("cantidad")
+                Log.i("dsssssssssssssssssss", cantidad.toString())
+
+                val descripcionPreparacion = resp.getJSONObject(i).getString("descripcionPreparacion")
+                Log.i("dsssssssssssssssssss", descripcionPreparacion.toString())
+
+                val opcional = resp.getJSONObject(i).getBoolean("opcional")
+                Log.i("dsssssssssssssssssss", opcional.toString())
+
+                val tipoIngredienteUtilizados = resp.getJSONObject(i).getString("tipoIngredienteUtilizados")
+                Log.i("dsssssssssssssssssss", tipoIngredienteUtilizados.toString())
+
+                val necesitaRefrigeracion = resp.getJSONObject(i).getBoolean("necesitaRefrigeracion")
+
+                Log.i("dsssssssssssssssssss", necesitaRefrigeracion.toString())
+
+                val comidaId = resp.getJSONObject(i).getJSONObject("comidaId").getInt("id")
+
+                Log.i("dsssssssssssssssssss", comidaId.toString())
+
+
+                val app = Ingredientes(
+                    id,
+                    idIngredientes,
+                    nombreIngrediente,
+                    cantidad,
+                    descripcionPreparacion,
+                    opcional,
+                    tipoIngredienteUtilizados,
+                    necesitaRefrigeracion,
+                    comidaId
+                )
+                aplicaciones.add(app)
+                Log.i("http-2", "DatosIngredientes-2: ${app}")
+            }
+            Log.i("http-2", "DatosReturnIngredientes: ${aplicaciones}")
+            return aplicaciones
+        }
+
+        fun getList(): ArrayList<Ingredientes> {
+            val aplicaciones: ArrayList<Ingredientes> = ArrayList()
+            ip.httpGet().responseJson { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http-2", "Error: ${ex}")
+                    }
+                    is Result.Success -> {
+                        val datos = result.get()
+                        aux = datos.array()
+                        Log.i("http-2", "DatosAP: ${aux}")
+                        Log.i("Tipo", "${aux::class.simpleName}")
+                    }
+
+                }
+                resp = result.get().array()
+                Log.i("http-3", "DatosAP-2: holaa${resp.getJSONObject(1).getJSONObject("soId").getInt("id")}")
+
+
+            }
+            for (i in 0 until aux.length()) {
+
+                val id = resp.getJSONObject(i).getInt("id")
+
+                Log.i("dsssssssssssssssssss", id.toString())
+
+
+                val idIngredientes = resp.getJSONObject(i).getLong("idIngredientes")
+                Log.i("dsssssssssssssssssss", idIngredientes.toString())
+
+                val nombreIngrediente = resp.getJSONObject(i).getString("nombreIngrediente")
+                Log.i("dsssssssssssssssssss", nombreIngrediente.toString())
+
+                val cantidad = resp.getJSONObject(i).getInt("cantidad")
+                Log.i("dsssssssssssssssssss", cantidad.toString())
+
+                val descripcionPreparacion = resp.getJSONObject(i).getString("descripcionPreparacion")
+                Log.i("dsssssssssssssssssss", descripcionPreparacion.toString())
+
+                val opcional = resp.getJSONObject(i).getBoolean("opcional")
+                Log.i("dsssssssssssssssssss", opcional.toString())
+
+                val tipoIngredienteUtilizados = resp.getJSONObject(i).getString("tipoIngredienteUtilizados")
+                Log.i("dsssssssssssssssssss", tipoIngredienteUtilizados.toString())
+
+                val necesitaRefrigeracion = resp.getJSONObject(i).getBoolean("necesitaRefrigeracion")
+
+                Log.i("dsssssssssssssssssss", necesitaRefrigeracion.toString())
+
+                val comidaId = resp.getJSONObject(i).getJSONObject("comidaId").getInt("id")
+
+                Log.i("dsssssssssssssssssss", comidaId.toString())
+
+                 val app = Ingredientes(
+                    id,
+                    idIngredientes,
+                    nombreIngrediente,
+                    cantidad,
+                    descripcionPreparacion,
+                    opcional,
+                    tipoIngredienteUtilizados,
+                    necesitaRefrigeracion,
+                    comidaId
+                )
+                aplicaciones.add(app)
+                Log.i("http-3", "DatosAP-2: ${app}")
+            }
+            Log.i("http-3", "DatosReturnAP: ${aplicaciones}")
+            return aplicaciones
+        }
 
 
     }

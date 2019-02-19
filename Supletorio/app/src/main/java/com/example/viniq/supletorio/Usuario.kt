@@ -10,17 +10,22 @@ class Usuario(
     var apellido: String,
     var fechaNacimiente: String,
     var correo: String,
-    var password: String
+    var password: String,
+    val total_oro:Int,
+    val total_experiencia:Int
 
 
-) : Parcelable {
+
+    ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readInt(),
+        parcel.readInt()
     ) {
     }
 
@@ -31,6 +36,8 @@ class Usuario(
         parcel.writeString(fechaNacimiente)
         parcel.writeString(correo)
         parcel.writeString(password)
+        parcel.writeInt(total_oro)
+        parcel.writeInt(total_experiencia)
     }
 
     override fun describeContents(): Int {
@@ -46,7 +53,6 @@ class Usuario(
             return arrayOfNulls(size)
         }
     }
-
 
 }
 
