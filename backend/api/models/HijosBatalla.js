@@ -11,8 +11,17 @@ module.exports = {
 
     ganador:{
       type: "string"
+      },
+
+      idInTiBatalla:{
+      model:'InteraccionesTipoBatalla'
+      },
+      idIngrUsuario:{
+      model:'HijosPorUsuario'
       }
+
   },
+
 
 };
 

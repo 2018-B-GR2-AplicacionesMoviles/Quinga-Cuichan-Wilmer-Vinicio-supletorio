@@ -51,11 +51,11 @@ class CrearIngredientesActivity : AppCompatActivity() {
         if (type == "Edit") {
             val ingredientesRecivida = intent.getParcelableExtra<Ingredientes>("Ingredientes")
 
-             txt_id_ingredienteCrear.setText(ingredientesRecivida.idIngredientes.toString())
+            txt_id_ingredienteCrear.setText(ingredientesRecivida.idIngredientes.toString())
             txt_nombres_ingredienteCrear.setText(ingredientesRecivida.nombreIngrediente.toString())
             txt_cantidadCrear.setText(ingredientesRecivida.cantidad.toString())
             txt_descripcionPreparacionCrear.setText(ingredientesRecivida.descripcionPreparacion.toString())
-            txt_tipoIngrediente.setText(ingredientesRecivida.tipoIngrediente.toString())
+            txt_tipoIngrediente.setText(ingredientesRecivida.tipoIngredienteUtilizados.toString())
             idC = ingredientesRecivida.id.toInt()
             tipo = true
         }
@@ -148,7 +148,7 @@ class CrearIngredientesActivity : AppCompatActivity() {
                 opcional = false
             }
 
-            var tipoIngrediente = txt_tipoIngrediente.text.toString()
+            var tipoIngredienteUtilizados = txt_tipoIngrediente.text.toString()
 
             var necesitaRefrigeracion: Boolean
             if (opcion22.equals("Si", true)) {
@@ -176,19 +176,18 @@ class CrearIngredientesActivity : AppCompatActivity() {
                     cantidad,
                     descripcionPreparacion,
                     opcional,
-                    tipoIngrediente,
+                    tipoIngredienteUtilizados,
                     necesitaRefrigeracion,
                     idComida
                 )
-
 
                 BaseDatosIngredientes.editarIngrediente(ingredidentesIngredientes)
                 Toasty.success(this, "Datos Editados", Toast.LENGTH_LONG, true).show()
                 val intent = Intent(this, ListaIngredientesActivity::class.java)
                 startActivity(intent)
                 this.finish()
-            } else {
 
+            } else {
 
                 var ingredidentesIngredientes = Ingredientes(
                     0,
@@ -197,12 +196,19 @@ class CrearIngredientesActivity : AppCompatActivity() {
                     cantidad,
                     descripcionPreparacion,
                     opcional,
-                    tipoIngrediente,
+                    tipoIngredienteUtilizados,
                     necesitaRefrigeracion,
                     idComida
                 )
 
+                Log.i("aaaaaaaaaaaaaaaaaa", ingredidentesIngredientes.id.toString())
+                Log.i("aaaaaaaaaaaaaaaaaa", ingredidentesIngredientes.nombreIngrediente.toString())
+                Log.i("aaaaaaaaaaaaaaaaaa", ingredidentesIngredientes.comidaId.toString())
+
                 BaseDatosIngredientes.insertarIngrediente(ingredidentesIngredientes)
+
+                Log.i("aaaaaaaaaaaaaaaaaa", BaseDatosIngredientes.insertarIngrediente(ingredidentesIngredientes).toString())
+
                 Toasty.success(this, "Datos registrados", Toast.LENGTH_LONG, true).show()
                 val intent = Intent(this, ListaIngredientesActivity::class.java)
                 startActivity(intent)

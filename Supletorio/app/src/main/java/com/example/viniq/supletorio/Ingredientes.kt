@@ -10,7 +10,7 @@ class Ingredientes(
     var cantidad: Int,
     var descripcionPreparacion: String,
     var opcional: Boolean,
-    var tipoIngrediente: String,
+    var tipoIngredienteUtilizados: String,
     var necesitaRefrigeracion: Boolean,
     var comidaId: Int
 ) : Parcelable {
@@ -34,7 +34,7 @@ class Ingredientes(
         parcel.writeInt(cantidad)
         parcel.writeString(descripcionPreparacion)
         parcel.writeByte(if (opcional) 1 else 0)
-        parcel.writeString(tipoIngrediente)
+        parcel.writeString(tipoIngredienteUtilizados)
         parcel.writeByte(if (necesitaRefrigeracion) 1 else 0)
         parcel.writeInt(comidaId)
     }
@@ -52,5 +52,4 @@ class Ingredientes(
             return arrayOfNulls(size)
         }
     }
-
 }

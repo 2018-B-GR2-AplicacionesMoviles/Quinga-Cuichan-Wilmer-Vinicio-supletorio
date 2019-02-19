@@ -9,31 +9,30 @@ module.exports = {
 
   attributes: {
 
-    nombreIngredientes:{
-      type: "string"
-      },
-      cantidad:{
-        type: "number"
-      },
-      descriptionPreparacion:{
-          type: "string"
-      },
-      opcional:{
-      		type:"boolean"
-      },
-      tipoIngrediente :{
-      		type:"string"
-      },
-      necesitaRefrigeracion:{
-      type:"boolean"
-      },
-      comidaId:{
-     type:"number"
-      },
+	clima:{
+		type:'number'
+	},
+	turnosJugados:{
+		type:'number'
+	},
+	recompensaOro:{
+		type:'number'
+	},
+	recompensaExp:{
+		type:'number'
+	},
+	estado:{
+		type:'boolean'
+	},
 
-    //  tipoTablaHijo:{
+	idIngredientes:{
+	model:'Ingredientes'
+	},
 
-      //}
+	hijosBatalla:{
+	collection:'HijosBatalla',
+	via:'idInTiBatalla'
+	}
   },
 
 };

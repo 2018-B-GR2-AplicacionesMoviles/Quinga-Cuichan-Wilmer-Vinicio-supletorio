@@ -14,6 +14,13 @@ module.exports = {
       },
       experiencia_recolectada:{
       type: "string"
+      },
+      idHijoPorUsuario:{
+      model:'HijosPorUsuario'
+      },
+
+      idIngrediente:{
+      model:'Ingredientes'
       }
   },
 

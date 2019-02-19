@@ -27,6 +27,7 @@ class ListaIngredientesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_ingredientes)
+        Log.i("cssdcsdcsdcsdcds","cdsdcsdcsdcsdc")
 
         val comidaRecivido = intent.getParcelableExtra<Comida>("Comida")
         idComidaRecivido.text = "ID COMIDA:   " + comidaRecivido.idComida.toString()
@@ -35,6 +36,7 @@ class ListaIngredientesActivity : AppCompatActivity() {
         hijoNacionalidad.text = "NACIONALIDAD:  " + comidaRecivido.nacionalidad.toString()
         hijoNumPersonas.text = "NÚMERO PERSONAS:    " + comidaRecivido.numeroPersonas.toInt()
         idComida = comidaRecivido.idComida.toString().toInt()
+        Log.i("cssdcsdcsdcsdcds","ddddddddddddddddddddddddddddddddddd")
 
 
         if (comidaRecivido.picante === true) {
@@ -46,9 +48,12 @@ class ListaIngredientesActivity : AppCompatActivity() {
 
         }
 
+        Log.i("cssdcsdcsdcsdcds","wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
 
         val listaIngredientes = this
         comi = BaseDatosIngredientes.getListaIdIngredientes(idComida)
+        Log.i("cssdcsdcsdcsdcds","wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddddddddddddddddwwwwwwwwwww")
+
         Log.i("bddd", "${comi}")
         lista = findViewById(R.id.reciclerListaIngredientes)
         Log.i("dddddddddddddddddddddd", "dscsdcsdcsdcsdcdsc")

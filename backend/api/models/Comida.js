@@ -22,14 +22,11 @@ module.exports = {
   },
   picante:{
   		type:"boolean"
+  },
+  ingredientes:{
+  collection:'Ingredientes',
+  via:'comidaId'
   }
   },
-
-  /////relaciones one to many
- // ingredientes:{
-  //collection:'ingrediente'
-  //via: 'owner'
- // }
-
 };
 

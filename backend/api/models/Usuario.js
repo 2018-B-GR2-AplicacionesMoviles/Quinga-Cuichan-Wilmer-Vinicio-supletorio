@@ -24,12 +24,15 @@ module.exports = {
   		type:'string'
   },
   total_oro:{
-  type:'integer'
+  type:'number'
   },
   total_experiencia:{
-  type:'integer'
+  type:'number'
+  },
+  hijosPorUsuario:{
+  collection:'HijosPorUsuario',
+  via:'idUsuario'
   }
-
   },
 
 };

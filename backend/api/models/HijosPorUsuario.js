@@ -9,6 +9,36 @@ module.exports = {
 
   attributes: {
 
+  idUsuario:{
+  model:'Usuario'
+  },
+
+  idIngredientes:{
+  model:'Ingredientes'
+  },
+
+  experienciasIngredientes:{
+  type:'number'
+  },
+
+  numBatallas:{
+  type:'number'
+  },
+
+  numRecolectas:{
+  type: 'number'
+  },
+
+  hijosBatalla:{
+  collection:'HijosBatalla',
+  via:'idIngrUsuario'
+  },
+  interaccionesTipoRecoleccion:{
+  		collection:'InteraccionesTipoRecoleccion',
+  		via:'idHijoPorUsuario'
+  	}
+
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

@@ -8,11 +8,11 @@
 module.exports = {
 
   attributes: {
+
   idIngredientes:{
-    type: "number"
+      type: "number"
 
   },
-
   nombreIngrediente:{
   type: "string"
   },
@@ -25,7 +25,7 @@ module.exports = {
   opcional :{
   		type:"boolean"
   },
-  tipoIngrediente :{
+  tipoIngredienteUtilizados :{
   		type:"string"
   },
   necesitaRefrigeracion :{
@@ -34,11 +34,31 @@ module.exports = {
   comidaId:{
       		type:"number"
   },
-  }
+  hijosPorUsuarios:{
+  collection:'HijosPorUsuario',
+  via:'idIngredientes'
 
+  },
 
+  comidaId:{
+  model:'Comida'
+  },
 
+  	tipoIngrediente:{
+  		type:'string',
+  		isIn:['batalla','recoleccion','personaje']
+  	},
 
+  		interaccionesTipoBatalla:{
+    		collection:'InteraccionesTipoBatalla',
+    		via:'idIngredientes'
+    	},
 
+    		interaccionesTipoRecoleccion:{
+      		collection:'InteraccionesTipoRecoleccion',
+      		via:'idIngrediente'
+      	}
+
+  },
 };
 
